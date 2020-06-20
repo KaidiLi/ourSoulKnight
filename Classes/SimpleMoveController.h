@@ -15,14 +15,28 @@ public:
 
 	void set_speed(int ispeed);//设置移动速度
 	void set_ixspeed(int ispeed);
-
 	void set_iyspeed(int ispeed);
+	void bind_sprite(Sprite* sprite);
+
+
 private:
 	int m_ixspeed;//x方向的移动速度
 	int m_iyspeed;//y方向的移动速度
-
+	Sprite* m_sprite;
 	void registeKeyBoardEvent();
 	ValueMap   map;
+
+	/*action management*/
+	Animation* knight_animate;
+	Animate* knight_animate_run;
+
+	int left_right_tag;//to decide which action to use when press w or s
+
+	bool key_w;
+	bool key_a;
+	bool key_s;
+	bool key_d;
 };
 
 #endif
+#pragma once
